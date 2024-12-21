@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'alvinpereira.dev',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 189, 242, 161)),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(255, 189, 242, 161)),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'alvinpereira.dev'),
@@ -64,7 +66,8 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(height: 10),
             SocialMediaLink(
               text: 'Resume',
-              url: 'https://docs.google.com/document/d/1E9yayN8gYHIZok5vPVkj0P_OfBeDbUXyRflhYRICZzE/edit?usp=sharing',
+              url:
+                  'https://docs.google.com/document/d/1E9yayN8gYHIZok5vPVkj0P_OfBeDbUXyRflhYRICZzE/edit?usp=sharing',
             ),
           ],
         ),
@@ -86,32 +89,15 @@ class SocialMediaLink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {
-        // Handle link tap here (e.g., show a dialog with the link)
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: Text(text),
-            content: Text('Open in browser?'),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  // You can use launch() from package:url_launcher if you want to
-                  // launch the URL, but it's not essential for this simplified approach.
-                  // launch(url);
-                  Navigator.of(context).pop();
-                },
-                child: const Text('Open'),
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text('Cancel'),
-              ),
-            ],
-          ),
-        );
+      onPressed: () async {
+        final Uri uri = Uri.parse(url);
+        if (await canLaunchUrl(uri)) {
+          await launchUrl(uri);
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Could not launch $url')),
+          );
+        }
       },
       child: Text(
         text,

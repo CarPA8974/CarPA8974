@@ -1,0 +1,11 @@
+C:/Users/Alvin/dev/CarPA8974/build/windows/x64/runner/Debug/data/icudtl.dat
+C:/Users/Alvin/dev/CarPA8974/build/windows/x64/runner/Debug/flutter_windows.dll
+C:/Users/Alvin/dev/CarPA8974/build/windows/x64/runner/Debug/url_launcher_windows_plugin.dll
+C:/Users/Alvin/dev/CarPA8974/build/windows/x64/runner/Debug/data/flutter_assets/AssetManifest.bin
+C:/Users/Alvin/dev/CarPA8974/build/windows/x64/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/Users/Alvin/dev/CarPA8974/build/windows/x64/runner/Debug/data/flutter_assets/FontManifest.json
+C:/Users/Alvin/dev/CarPA8974/build/windows/x64/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/Users/Alvin/dev/CarPA8974/build/windows/x64/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/Users/Alvin/dev/CarPA8974/build/windows/x64/runner/Debug/data/flutter_assets/NOTICES.Z
+C:/Users/Alvin/dev/CarPA8974/build/windows/x64/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+C:/Users/Alvin/dev/CarPA8974/build/windows/x64/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag
