@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'alvinpereira.dev',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 189, 242, 161)),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'alvinpereira.dev'),
