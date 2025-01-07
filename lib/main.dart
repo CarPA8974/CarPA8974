@@ -2,67 +2,98 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'alvinpereira.dev',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 189, 242, 161)),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'alvinpereira.dev'),
+      debugShowCheckedModeBanner: false, // Remove the debug banner
+      home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text('My Home Page'),
+        backgroundColor: Colors.lightGreen, // Mild green color
+        actions: [
+          IconButton(
+            icon: Icon(Icons.phone),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('Contact Info'),
+                    content: Text('Phone: +55 (47) 99192-8980'),
+                    actions: [
+                      TextButton(
+                        child: Text('Close'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.email),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('Contact Info'),
+                    content: Text('Email: cpalvin@outlook.com'),
+                    actions: [
+                      TextButton(
+                        child: Text('Close'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
+            Text(
               'Welcome',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
             SocialMediaLink(
               text: 'LinkedIn',
               url: 'https://www.linkedin.com/in/alvincpereira/',
+              fontSize: 24.0,
             ),
             const SizedBox(height: 10),
             SocialMediaLink(
               text: 'GitHub',
               url: 'https://github.com/CarPA8974',
+              fontSize: 24.0,
             ),
             const SizedBox(height: 10),
             SocialMediaLink(
               text: 'Resume',
-              url:
-                  'https://docs.google.com/document/d/1E9yayN8gYHIZok5vPVkj0P_OfBeDbUXyRflhYRICZzE/edit?usp=sharing',
+              url: 'https://docs.google.com/document/d/1E9yayN8gYHIZok5vPVkj0P_OfBeDbUXyRflhYRICZzE/edit?usp=sharing',
+              fontSize: 24.0,
             ),
           ],
         ),
@@ -74,12 +105,14 @@ class _MyHomePageState extends State<MyHomePage> {
 class SocialMediaLink extends StatelessWidget {
   final String text;
   final String url;
+  final double fontSize;
 
   const SocialMediaLink({
-    super.key,
+    Key? key,
     required this.text,
     required this.url,
-  });
+    this.fontSize = 20.0,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -96,8 +129,10 @@ class SocialMediaLink extends StatelessWidget {
       },
       child: Text(
         text,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
+        style: TextStyle(
+          fontSize: fontSize,
+          color: Colors.blue,
+          decoration: TextDecoration.underline,
         ),
       ),
     );
