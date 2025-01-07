@@ -60,11 +60,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const SizedBox(height: 10),
             SocialMediaLink(
-              text: 'Xbox',
-              url: 'https://www.xbox.com/pt-BR/play/user/CarPA8974',
-            ),
-            const SizedBox(height: 10),
-            SocialMediaLink(
               text: 'Resume',
               url:
                   'https://docs.google.com/document/d/1E9yayN8gYHIZok5vPVkj0P_OfBeDbUXyRflhYRICZzE/edit?usp=sharing',
@@ -81,10 +76,10 @@ class SocialMediaLink extends StatelessWidget {
   final String url;
 
   const SocialMediaLink({
-    Key? key,
+    super.key,
     required this.text,
     required this.url,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
