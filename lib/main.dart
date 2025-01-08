@@ -20,7 +20,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Home Page'),
+        title: Text('Alvin Pereira'),
         backgroundColor: Colors.lightGreen, // Mild green color
         actions: [
           IconButton(

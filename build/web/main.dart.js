@@ -29835,7 +29835,7 @@ A.SI.prototype={}
 A.zH.prototype={
 M(a){return new A.qy(new A.zI(null),!1,null)}}
 A.zI.prototype={
-M(a){var s=null,r=A.hI("My Home Page",s),q=t.F,p=A.a([A.a3M(s,A.a3L(B.yq,s),s,s,new A.RU(a),s,s),A.a3M(s,A.a3L(B.yo,s),s,s,new A.RV(a),s,s)],q)
+M(a){var s=null,r=A.hI("Alvin Pereira",s),q=t.F,p=A.a([A.a3M(s,A.a3L(B.yq,s),s,s,new A.RU(a),s,s),A.a3M(s,A.a3L(B.yo,s),s,s,new A.RV(a),s,s)],q)
 return new A.rS(new A.oz(r,p,B.BV,new A.FE(s,s,1/0,56),s),A.JV(A.a6H(A.a([A.hI("Welcome",A.l2(s,s,s,s,s,s,s,s,s,s,s,32,s,s,B.bL,s,s,!0,s,s,s,s,s,s,s,s)),B.FG,new A.mX("LinkedIn","https://www.linkedin.com/in/alvincpereira/",24,s),B.tZ,new A.mX("GitHub","https://github.com/CarPA8974",24,s),B.tZ,new A.mX("Resume","https://docs.google.com/document/d/1E9yayN8gYHIZok5vPVkj0P_OfBeDbUXyRflhYRICZzE/edit?usp=sharing",24,s)],q),B.aW,B.fJ,B.dR),s,s),s)}}
 A.RU.prototype={
 $0(){A.abF(new A.RT(),this.a,t.z)},
