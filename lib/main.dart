@@ -6,6 +6,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,6 +18,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,11 +112,11 @@ class SocialMediaLink extends StatelessWidget {
   final double fontSize;
 
   const SocialMediaLink({
-    Key? key,
+    super.key,
     required this.text,
     required this.url,
     this.fontSize = 20.0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
